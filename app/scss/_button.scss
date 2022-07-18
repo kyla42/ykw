@@ -1,0 +1,350 @@
+@use "util" as u;
+
+.switch-btn {
+    position: relative;
+    width: 15rem;
+    height: 15rem;
+    background-color: hsla(0, 0%, 0%, 0.17);
+    border: none; 
+    border-radius: 50%;
+    box-shadow: 0 0 0 1rem hsl(0, 0%, 0%, 0.05);
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: all .8s ease-in-out;
+    cursor: pointer;
+    transform: scale(0.9);
+    z-index: 2;
+
+    svg {
+        transform: rotate(90deg);
+    
+        .hl-line {
+            fill: transparent;
+            stroke: white;
+            stroke-width: 2px;
+            stroke-dasharray: 80 500;
+            stroke-dashoffset: 80;
+            transition: all .8s ease-in-out;
+        }
+    }
+
+    &.dark {
+        box-shadow: 0 0 0 1rem hsl(0, 0%, 0%, 0.1);
+    }
+
+    &:hover {
+        background-color: transparent;
+        box-shadow: 0 0 0 1rem hsl(0, 0%, 0%, 0.15);
+        transition: all .8s ease-in-out;
+
+        .hl-line {
+            stroke-dashoffset: -500;
+        }
+
+        &.dark {
+            box-shadow: 0 0 0 1rem hsl(0, 0%, 0%, 0.25);
+        }
+    }
+}
+
+.btn-design {
+    position: absolute;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    background: url(../images/ground.svg), u.$btnLight;    
+    background-size: cover;    
+    overflow: hidden;
+    transform: scale(0.9);
+
+    .sun-moon {
+        position: absolute;
+        top: 3rem;
+        left: 3rem;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background-color: u.$btnSun;
+        box-shadow: 0 0 0.9rem 0.6rem hsla(0, 0%, 100%, 0.7);
+        animation: sun 5s linear infinite;
+
+        @keyframes sun {
+            50% {
+                box-shadow: 0 0 1.6rem 1.3rem hsla(0, 0%, 100%, 0.7);
+            }
+        }
+    }
+
+    .lights {
+        position: absolute;
+        top: 3rem;
+        left: 3rem;
+
+        @for $i from 1 through 4 {
+            .lt-#{$i} {
+                position: absolute;
+                top: 1rem * $i;
+                left: 1rem * $i;
+                width: 1rem * $i;
+                height: 1rem * $i;
+                background-color: hsla(0, 0%, 100%, 0.15);
+                border-radius: 50%;
+                opacity: 0;
+                animation: lights 5s infinite;
+                animation-delay: .25s * $i;
+            }
+
+            @keyframes lights {
+                30% {
+                    opacity: 1;
+                }
+
+                45% {
+                    transform: translate(1rem, 1rem);
+                    opacity: 1;
+                }
+
+                55% {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+    .sombrero {
+        position: absolute;
+        bottom: 2rem;
+        left: 3rem;
+        width: 4rem;
+        height: 3rem;
+        background: url(../images/sombrero.svg) no-repeat;
+        background-size: contain;
+        z-index: 1;
+        animation: sombrero-light 5s ease-in-out infinite;
+
+        @keyframes sombrero-light {
+            48%, 52%, 56% {
+                transform: none;
+            }
+
+            50%, 54% {
+                transform: rotate(4deg);
+                transform-origin: bottom right;
+            }
+        }
+    }
+
+    .cuctus-1 {
+        position: absolute;
+        top: 2.5rem;
+        right: 1.5rem;
+        width: 4rem;
+        height: 9rem;      
+        background: url(../images/cuctus-1.svg) no-repeat;
+        background-size: contain;
+        animation: cuctus 5s ease-in-out infinite;
+
+        span {
+            position: absolute;
+            top: 8.4rem;
+            right: 1.8rem;
+            width: 0.7rem;
+            height: 2.5rem;
+            background-color: u.$btnCuctusShadow;
+            border-radius: 50%;
+            transform: rotate(-70deg);
+            transform-origin: top;        
+        }
+    }
+
+    .cuctus-2 {
+        @extend .cuctus-1;
+        top: 5rem;
+        right: 4.6rem;
+        width: 3rem;
+        height: 6.4rem;     
+        background: url(../images/cuctus-2.svg) no-repeat;
+        background-size: contain;
+
+        span {
+            top: 6.3rem;
+            right: 1.2rem;
+        }
+    }
+
+    @keyframes cuctus {
+        50% {
+            transform: rotate(3deg);
+            transform-origin: bottom;
+        }
+    }
+}
+
+// night ver.
+.dark-btn {
+    background: url(../images/ground.svg), u.$btnDark;
+    background-size: cover;
+
+    .sun-moon {
+        box-shadow: none;
+        animation: none;
+
+        .planet {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1.6rem;
+            height: 1.6rem;
+            border-radius: 50%;
+            background: u.$btnPlanet;
+            display: block;
+        }        
+    }
+
+    .lights {
+        display: none;
+    }
+
+    .sombrero {
+        animation: sombrero-dark 10s ease-in-out infinite;
+
+        @keyframes sombrero-dark {
+            0%, 19%, 24%, 70%, 100% {
+                transform: none;
+            }
+            20%, 22% {
+                transform: rotate(3deg);
+                transform-origin: bottom left;
+            }
+
+            21%, 23% {
+                transform: rotate(-3deg);
+                transform-origin: bottom right;
+            }
+
+            30%, 65% {
+                transform: rotate(-15deg);
+                transform-origin: bottom left;
+            }
+        }
+    }
+
+    .u-m-a {
+        position: absolute;
+        bottom: 2.5rem;
+        left: 3.8rem;
+        width: 2rem;
+        height: 1rem;
+        background-color: u.$btnUMA;
+        border-radius: 1rem 1rem;
+        box-shadow: inset -0.2rem -0.2rem 0.2rem u.$btnUMAshadow;
+
+        span {
+            position: absolute;
+
+            &:first-child {
+                position: absolute;
+                bottom: 0.25rem;
+                right: 0.3rem;
+                width: 0.12rem;
+                height: 0.12rem;
+                background-color: u.$btnUMAeyes;
+                border-radius: 50%;
+                backface-visibility: hidden;
+                animation: eyes 10s infinite;
+
+                @keyframes eyes {
+
+                    40%, 60% {
+                        transform: none;
+                    }
+                    50% {
+                        transform: translateX(-0.4rem);
+                    }
+                }
+            }
+
+            &:last-child {
+                @extend :first-child;
+                right: 0.7rem;           
+            }
+        }
+    }
+
+    .stars {
+        @for $i from 1 through 10 {
+            .star-#{$i} {
+                position: absolute;
+                top: 1.3rem * $i;
+                right: 2.4rem * $i;
+                width: 0.1rem;
+                height: 0.1rem;
+                border-radius: 50%;
+                background-color: white;
+                animation: twinkle-#{$i} 1s * $i ease-in-out infinite;
+
+                @keyframes twinkle-#{$i} {
+                    50% {
+                        box-shadow: 0 0 0.08rem 0.08rem hsla(0, 0%, 96%, 0.8);
+                    }
+                }
+            }
+        }
+
+        .star-1 {
+            top: 0rem;
+            right: 0rem;
+            width: 0.3rem;
+            height: 0.3rem;
+            animation: shooting 7s ease-in forwards infinite;
+
+            @keyframes shooting {
+                94% {
+                    top: 2rem;
+                    right: 2rem;
+                    opacity: 1;
+                }
+
+                100% {
+                    top: 8rem;
+                    right: 13rem;
+                    opacity: 0;
+                }
+            }         
+        }
+
+        .star-4 {
+            top: 1.5rem;
+        }
+
+        .star-6 {
+            top: 2rem;
+            right: 6.5rem;
+        }
+
+        .star-7 {
+            top: 6rem;
+            right: 1rem;
+        }
+
+        .star-8 {
+            top: 4rem;
+            right: 5rem;
+        }
+
+        .star-9 {
+            top: 5rem;
+            right: 7.5rem;
+        }
+
+        .star-10 {
+            top: 5.5rem;
+            right: 13.5rem;
+        }
+    }
+ 
+    .cuctus-1,
+    .cuctus-2 {
+        animation: none;
+    }
+}

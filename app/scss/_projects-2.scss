@@ -1,0 +1,51 @@
+@use "util" as u;
+
+// projects -CSS
+.css {
+    width: 40rem;
+    padding: 0 2rem;
+    @extend %fxcol-ai-c;
+
+    .css-projects {
+        margin: 4rem auto 9rem auto;
+        @extend %fx-ai-c;
+        column-gap: 3rem;
+    }
+
+    #btn-prev,
+    #btn-next {
+        width: 5rem;
+        height: 5rem;
+        font-size: 5rem;
+        color: u.$fontLight;
+        background-color: u.$whiteIsh;
+        border-radius: 50%;
+        transition: all .3s ease-in-out;
+
+        &:active {
+            background-color: u.$lightGray;
+        }
+    }
+
+    &__item {
+        display: flex;
+    }
+
+    &__image {
+        width: 17rem;
+        height: 17rem;
+        border-radius: 50%;
+        transition: all .2s ease-in-out;
+
+        &:hover {
+            transform: scale(1.04);        
+        }
+
+        @for $i from 1 through 6 {
+            &.img#{$i} {
+                background: url(../images/css-ss#{$i}.jpg) no-repeat center center;
+                background-size: cover; 
+            }
+        }
+    }  
+}

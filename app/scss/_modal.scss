@@ -1,0 +1,104 @@
+@use "util" as u;
+
+.overlay {  
+    position: fixed;
+    width: 100%;
+    min-height: 100vh;
+    left: 0;
+    bottom: 0;
+    background-color: u.$overlay;
+    z-index: 2;
+    display: flex;
+}
+
+.hidden {
+    display: none;
+}
+
+.modal {
+    position: absolute;
+    left: 50%;
+    bottom: calc(50% - 50rem / 2);
+    width: 50rem;
+    height: 50rem;    
+    transform: translate(-50%, 0);     
+    background-color: u.$white;
+    animation: modal .3s ease-in-out;
+    @extend %fx-jc-c;
+
+    @include u.bp(sm) {
+        width: 100%;
+    }
+
+    &.dark {
+        background-color: u.$whiteIsh;
+    }
+
+    @keyframes modal {
+        0% {
+            // bottom: calc(50% - 62rem / 2);
+            transform: translate(-50%, 5rem);
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    #modal-close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 5rem;
+        color: u.$fontLight;
+        font-size: 5rem;
+        background-color: transparent;
+        @extend %fx-ai-c;
+    }    
+    
+    .anim-box{
+        width: 50rem;
+        height: 50rem;
+
+        #anim-link {
+            @include u.bp(sm) {
+                width: 100%;
+            }
+        }   
+    }
+
+    #modal-btn-prev,
+    #modal-btn-next {
+        position: absolute;
+        top: 22.5rem;
+        color: white;
+        background-color: transparent;
+        font-size: 5rem;
+        transform: scaleY(2);
+
+        @include u.bp(sm) {
+            top: 51rem;
+            font-size: 7rem;
+            transform: none;
+        }
+    }
+
+    #modal-btn-prev {
+        left: -5rem;
+
+        @include u.bp(sm) {
+            left: 30%;
+        }
+    }
+
+    #modal-btn-next {
+        right: -5rem;
+
+        @include u.bp(sm) {
+            right: 30%;
+        }
+    }
+}
+
+

@@ -1,0 +1,20 @@
+@use "util" as u;
+
+.hero-header {
+    max-width: 100vw;
+    height: 90rem;
+    background-color: u.$bgLight1;
+    display: flex;
+
+    &.dark {
+        background-color: u.$bgDark1;
+    }
+}
+
+.center {
+    margin: auto;
+    @extend %fxcol-ai-c;
+    // row-gap: 3rem;
+    row-gap: 2rem;
+}
+

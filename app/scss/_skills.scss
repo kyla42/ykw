@@ -1,0 +1,57 @@
+@use "util" as u;
+
+.skills {
+    background-color: u.$bgLight1;
+
+    &.dark {
+        background-color: u.$bgDark2;
+    }
+}
+
+.logos {
+    margin: 3rem 0 7rem 0;
+    color: u.$fontLight; 
+    display: flex;
+    
+    &-anim {
+        
+        @for $i from 1 through 7 {
+            .fall:nth-child(#{$i}) {
+                transform: translateY(-4rem);
+                opacity: 0;
+                animation: fall .4s ease-out forwards;
+                animation-delay: .3s * $i
+            }
+
+            @keyframes fall {
+
+                60% {
+                    transform: translateY(1.6rem);
+                }
+    
+                100% {
+                    transform: none;
+                    opacity: 1;
+                }
+            }
+        }    
+    }   
+
+    span{
+        @extend %fx-ai-c;
+    }
+
+    .bx {
+        &:not(:last-child) {
+            padding-right: 0.7rem;
+        }
+
+        &:before {    
+            font-size: 4rem;          
+        }
+    }
+
+    &.dark {
+        color: u.$whiteIsh;
+    }
+}

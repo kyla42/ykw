@@ -1,0 +1,36 @@
+// light/dark
+// $bgLight1: hsl(120, 21%, 89%);
+// $bgLight1: hsl(49, 47%, 80%);
+$bgLight1: hsl(43, 61%, 84%);
+// $bgLight: rgb(231, 225, 199);
+$bgLignt2:hsl(0, 0%, 100%);
+$bgLignt3:hsl(0, 0%, 12%);
+$bgDark1: hsl(0, 0%, 23%);
+$bgDark2: hsl(0, 0%, 40%);
+$bgDark3: hsl(0, 0%, 12%);
+
+// font
+$fontLight: hsl(235, 7%, 33%);
+$fontDark: hsl(0, 0%, 95%);
+
+// button design
+$btnLight: linear-gradient(to bottom, rgb(0, 176, 230), rgb(235, 249, 255));
+$btnDark: linear-gradient(to bottom, rgb(0, 57, 71), rgb(44, 161, 190), rgb(120, 231, 231));
+$btnSun: hsl(60, 88%, 78%);
+$btnPlanet: hsl(192, 100%, 25%);
+$btnCuctusShadow: hsla(0, 0%, 50%, 0.2);
+$btnUMA: hsla(129, 100%, 91%, 0.5);
+$btnUMAshadow: hsla(0, 0%, 57%, 0.5);
+$btnUMAeyes:hsla(0, 0%, 0%, 0.5);
+
+// general
+$lightGray: hsl(0, 0%, 77%);
+$whiteIsh: hsl(0, 0%, 94%);
+$white: hsl(0, 0%, 100%);
+
+// link button
+// $linkBtn: hsl(120, 31%, 41%);
+$linkBtn: hsl(51, 49%, 42%);
+
+// overlay
+$overlay: hsla(0, 0%, 0%, 0.4);

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="portfolio" content="personal portfolio created by Y.K.W.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./dist/style.css">
+    <script src="./app/js/script.js" defer></script>
+    <title>Portfolio</title>
+</head>
+
+<body>
+
+    <!-- hero -->
+    <header class="hero-header ltdk">
+        <div class="center">
+
+            <!-- switch button -->
+            <button class="switch-btn ltdk">
+                <svg width="150px" height="150px" viewBox="0 0 150 150">
+                    <circle class="hl-line" cx="75px" cy="75px" r="74.5px"/>
+                </svg>
+            </button>
+
+            <!-- button design -->
+            <div class="btn-design dark-btn">
+
+                <div class="sun-moon">
+                    <span class="planet"></span>
+                </div>
+
+                <div class="lights">
+                    <span class="lt-1"></span>
+                    <span class="lt-2"></span>
+                    <span class="lt-3"></span>
+                    <span class="lt-4"></span>
+                </div>
+
+                <div class="sombrero"></div>
+
+                <div class="u-m-a">
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <div class="stars">
+                    <span class="star-1"></span>
+                    <span class="star-2"></span>
+                    <span class="star-3"></span>
+                    <span class="star-4"></span>
+                    <span class="star-5"></span>
+                    <span class="star-6"></span>
+                    <span class="star-7"></span>
+                    <span class="star-8"></span>
+                    <span class="star-9"></span>
+                    <span class="star-10"></span>
+                </div>
+
+                <div class="cuctus-1">
+                    <span></span>
+                </div>
+                <div class="cuctus-2">
+                    <span></span>
+                </div>
+
+            </div>
+
+            <!-- Name -->
+            <h1 class="name ltdk">Y. K. W.</h1>
+        </div>
+    </header>
+    
+    <!-- projects 1 -->
+    <div class="projects projects--1 ltdk">
+        <div class="container">
+            <div class="title">
+                <h2 class="ltdk">PROJECTS</h2>
+            </div>
+
+            <!-- project-FEM -->
+            <div class="fem ltdk">
+                <a href="https://kyla42.github.io/room-homepage//" class="fem__item" target="_blank" rel="noopener noreferrer">
+                    <div class="fem__image" style="background-image: url(./images/fem-ss1.jpg)"></div>
+                    <div class="fem__desc">
+                        <p>Room Homepage</p>
+                        <p class="name">Frontend Mentor Project.
+                            Coded by Y.K.W.@kyla42</p>
+                    </div>
+                </a>
+                <a href="https://kyla42.github.io/Tip-calculator-app/" class="fem__item" target="_blank" rel="noopener noreferrer">
+                    <div class="fem__image" style="background-image: url(./images/fem-ss2.jpg)"></div>
+                    <div class="fem__desc">
+                        <p>Tip calculator app</p>
+                        <p class="name">Frontend Mentor Project.
+                            Coded by Y.K.W.@kyla42</p>
+                    </div>
+                </a>
+                <a href="https://kyla42.github.io/e-commerce-product-page/" class="fem__item" target="_blank" rel="noopener noreferrer">
+                    <div class="fem__image" style="background-image: url(./images/fem-ss3.jpg)"></div>
+                    <div class="fem__desc">
+                        <p>E-commerce product page</p>
+                        <p class="name">Frontend Mentor Project.
+                            Coded by Y.K.W.@kyla42</p>
+                    </div>
+                </a>
+                <a href="https://kyla42.github.io/loopstudios-landing-page/" class="fem__item" target="_blank" rel="noopener noreferrer">
+                    <div class="fem__image" style="background-image: url(./images/fem-ss4.jpg)"></div>
+                    <div class="fem__desc">
+                        <p>Loopstudios landing page<br><span class="name">(practice working with local data)</span></p>
+                        <p class="name">Frontend Mentor Project.
+                            Coded by Y.K.W.@kyla42</p>
+                    </div>
+                </a>
+            </div>
+
+            <a href="https://www.frontendmentor.io/profile/kyla42" class="fem-link ltdk" target="_blank" rel="noopener noreferrer">
+                <span class="msg">SEE ALL (25)</span>
+                <span class="hover-msg">
+                    <i class='bx bx-link'></i>&nbsp;Frontend Mentor
+                </span>
+            </a>
+
+        </div>
+    </div>
+
+    <!-- projects 2 -->
+    <div class="projects projects--2 ltdk">
+        <div class="container">
+            <div class="title">
+                <h3 class="ltdk">- TINY CSS ANIMATIONS -</h3>
+            </div>
+
+            <!-- project-CSS -->
+            <div class="css">
+                <div class="css-projects">
+                    <button id="btn-prev">
+                        <i class='bx bx-chevron-left'></i>
+                    </button>                  
+                    <div class="css__item">
+                        <a class="css__image img1"></a>
+                    </div>
+                    <button id="btn-next">
+                        <i class='bx bx-chevron-right'></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- modal -->
+    <div class="overlay hidden">
+            <div class="modal ltdk">
+                <div class="anim-box">
+                    <iframe src="https://kyla42.github.io/Octagon/" frameborder="0" width="500" height="500" id="anim-link" scrolling="no"></iframe>
+                </div>
+                <button id="modal-close"><i class='bx bx-x'></i></button>
+                <button id="modal-btn-prev"><i class='bx bx-chevron-left'></i></button>
+                <button id="modal-btn-next"><i class='bx bx-chevron-right'></i></button>
+            </div>
+    </div>
+
+    <!-- skills -->
+    <div class="skills ltdk">
+        <div class="container">
+            <div class="title">
+                <h2 class="ltdk">SKILLS</h2>
+            </div>
+            <div class="logos ltdk">
+                <i class='bx bxl-html5 bx-lg fall'></i>
+                <i class='bx bxl-css3 bx-lg fall' ></i>
+                <i class='bx bxl-sass bx-lg fall' ></i>
+                <i class='bx bxl-bootstrap bx-lg fall' ></i>
+                <span class="fall">& basics of&nbsp;</span>
+                <i class='bx bxl-javascript bx-lg fall' ></i>
+                <i class='bx bxl-python bx-lg fall' ></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer ltdk">
+        <div class="links">
+            <a href="https://github.com/kyla42" class="link github" target="_blank" rel="noopener">
+                <i class='bx bxl-github bx-lg'></i>
+            </a>
+            <a href="#x" class="link email" >
+                <i class='bx bx-envelope bx-lg'></i>
+            </a>
+        </div>
+        <p class="copyright">&copy; 2022 Y.K.W.</p>
+    </footer>
+
+</body>
+</html>

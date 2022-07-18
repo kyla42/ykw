@@ -1,0 +1,42 @@
+%fx {
+    display: flex;
+
+    &-jc-c {
+        display: flex;
+        justify-content: center;
+    }
+
+    &-jc-e {
+        display: flex;
+        justify-content: end;
+    }
+
+    &-ai-c {
+        display: flex;
+        align-items: center;
+    }
+
+    &-jcai-c {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+%fxcol {
+    display: flex;
+    flex-direction: column;
+
+    &-ai-c {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &-jcai-c {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

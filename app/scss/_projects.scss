@@ -1,0 +1,117 @@
+@use "util" as u;
+
+// projects -FEM
+.fem {
+    width: 100%;
+    margin-top: 8rem;
+    padding: 0 3rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 3%;
+
+    @include u.bp(md) {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 5%;
+        row-gap: 3rem;
+    }
+
+    @include u.bp(sm) {
+        grid-template-columns: 1fr;
+        row-gap: 3rem;
+    }
+
+    &__item {  
+        background-color: u.$white;
+        box-shadow: 0 0 2rem hsla(0, 0%, 0%, 0.3);
+        transition: all .2s ease-in-out;
+
+        &:hover {
+            transform: scale(1.05);
+            transition: all .2s linear;
+        }
+    }
+
+    &__image {
+        height: 25rem;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    &__desc {
+        height: 7rem;
+        padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+        color: u.$fontLight;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        
+        .name {
+            font-size: 1rem;
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    &.dark {
+        a {
+            background-color: u.$whiteIsh;
+        }
+    }
+}
+
+.fem-link {
+    position: relative;
+    width: 20rem;
+    height: 5rem;
+    margin: 7rem 0 8rem 0;
+    color: u.$fontDark; 
+    font-weight: 300; 
+
+    &:hover {
+        .msg {
+            opacity: 0;
+        }
+
+        .hover-msg {
+            opacity: 1;        
+        }
+    }
+
+    .msg {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;       
+        font-size: 2rem;
+        background-color: u.$bgDark2; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all .15s ease-in-out;
+    }
+
+    .hover-msg {
+        @extend .msg;
+        font-size: 1.8rem;
+        background-color: u.$linkBtn;
+        opacity: 0;
+    }
+
+    &.dark {
+        color: u.$fontLight;
+        font-weight: 400;
+
+        .msg {
+            background-color: u.$whiteIsh;
+        }
+        
+        &:hover {
+            .hover-msg {
+                display: flex;
+                background-color: u.$bgLight1;
+            }
+        }
+    }
+}

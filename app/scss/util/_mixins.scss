@@ -1,0 +1,12 @@
+// xs = 375px sm <=640px md <= 1024px
+$breakpoint: (
+    "xs": "(max-width: 23.4375em)",
+    "sm": "(max-width: 40em)",
+    "md": "(max-width: 64em)"
+);
+
+@mixin bp($size) {
+    @media #{map-get($breakpoint, $size)} {
+        @content;
+    }
+}

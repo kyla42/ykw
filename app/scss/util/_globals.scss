@@ -1,0 +1,93 @@
+@use "colors" as *;
+@use "mixins" as *;
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Mulish', sans-serif;
+    font-size: 1.6rem;
+}
+
+a, a:hover {
+    font-family: 'Mulish', sans-serif;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+}
+
+button {
+    border: none;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+}
+
+h1, h2, h3 {
+    font-weight: 300;
+    color: $fontLight;
+    margin: 0 auto;
+
+    &.dark {
+        color: $fontDark;
+    }
+}
+
+p {
+    line-height: 1.6rem;
+}
+
+.container {
+    max-width: 140rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include bp(md) {
+        height: fit-content;
+    }
+}
+
+.projects {
+    max-width: 100vw;
+    min-height: fit-content;
+
+    &--1 {
+        background-color: $whiteIsh;
+
+        &.dark {
+            background-color: $bgDark2;
+        }
+    }
+
+    &--2 {
+        background-color: $bgLignt2;
+
+        &.dark {
+            background-color: $bgDark1;
+        }
+    }
+    
+    @include bp(md) {
+        height: auto;
+    } 
+}
+
+.title {
+    margin: 8rem auto 0 auto;
+    letter-spacing: 0.3rem;
+
+    &__sm {
+        margin: 3rem auto 0 auto;
+        font-size: 2rem;
+        letter-spacing: 0.1rem;
+    }
+}
